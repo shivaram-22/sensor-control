@@ -1,0 +1,26 @@
+# Vivado-generated project data
+*.jou
+*.log
+*.str
+*.wdb
+*.wcfg
+*.pb
+*.wpc
+*.wdf
+*.dmp
+*.backup.*
+*.bit
+*.ltx
+*.dcp
+*.bin
+*.mcs
+*.prm
+.Xil/
+*.cache/
+*.sim/
+*.runs/
+*.hw/
+*.ip_user_files/
+
+# Output of rebuild_project.tcl
+/rebuilt/

@@ -1,0 +1,29 @@
+FPGA-Based Intelligent Sensor Monitoring and Fault Detection System - Vivado project
+==================================================================================
+
+1. Unzip to a short path WITHOUT spaces, e.g.  D:\sensor_monitor
+2. Vivado -> File -> Project -> Open... -> select sensor_monitor.xpr
+   (If Vivado asks to upgrade the project to your version, click "Automatically upgrade".)
+3. Flow Navigator -> Run Simulation -> Run Behavioral Simulation
+4. When the simulation opens, click "Run All" (the >> play button) once.
+   The Tcl Console ends with:  RESULT : ALL TESTS PASSED
+   (Optional, one time: Settings -> Simulation -> Simulation tab -> xsim.simulate.runtime = -all,
+    then Vivado runs to the end automatically every time.)
+
+Other testbenches: Sources -> Simulation Sources -> sim_1 -> right-click a tb_... file -> Set as Top,
+close the old simulation, run again.
+
+Synthesis: Run Synthesis -> Open Synthesized Design -> Report Utilization / Report Timing Summary.
+RTL schematic: RTL Analysis -> Open Elaborated Design -> Schematic.
+Do NOT generate a bitstream (no pins are assigned - simulation-only project).
+
+If the .xpr will not open in your Vivado version:
+   Tcl Console:   cd D:/sensor_monitor
+                  source rebuild_project.tcl
+   This creates rebuilt/sensor_monitor_rebuilt.xpr with the same files.
+
+Folders
+   sensor_monitor.srcs/sources_1/new   design (RTL) files, top = sensor_monitor_top
+   sensor_monitor.srcs/sim_1/new       testbenches + .mem sensor trace / expected results
+   sensor_monitor.srcs/constrs_1/new   timing.xdc (100 MHz clock, timing reports only)
+Vivado creates .cache, .sim, .runs, .hw, .ip_user_files folders itself when you use the project.
